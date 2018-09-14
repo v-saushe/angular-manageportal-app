@@ -1,0 +1,48 @@
+<md-toolbar class="mat-toolbar-tools">
+    <div class="md-toolbar-tools">
+
+        <h2 *ngIf="showRegistrationSuccessfull">Delete User?</h2>
+
+        <span flex="" class="flex"></span>
+        <button class="md-icon-button md-button md-ink-ripple" type="button" ng-transclude="" (click)="onCloseCancel()">
+            <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog" class="ng-scope" role="img">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fit=""
+                    preserveAspectRatio="xMidYMid meet" focusable="false">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                    </path>
+                </svg>
+            </md-icon>
+        </button>
+    </div>
+</md-toolbar>
+
+<md-dialog-content>
+    <div class="md-dialog-content" *ngIf="showRegistrationSuccessfull">
+        <p>Would you like to delete User?</p>
+    </div>
+
+    <div class="md-dialog-content" *ngIf="ResetPasswordSucessful">
+
+    </div>
+
+</md-dialog-content>
+
+<md-dialog-actions layout="row" class="layout-row">
+    <a class="md-button md-autofocus md-ink-ripple" ng-transclude="" href="javascript:void(0);" target="_blank"
+        md-autofocus="">
+        <span class="ng-scope">
+
+        </span>
+    </a>
+    <span flex="" class="flex"></span>
+    <button class="md-primary md-raised md-button md-ink-ripple" type="button" ng-transclude="" (click)="onCloseConfirm()">
+        <span class="ng-scope">
+            CONFIRM
+        </span>
+    </button>
+    <button class="md-primary md-raised md-button md-ink-ripple" type="button" ng-transclude="" (click)="onCloseConfirm()">
+        <span class="ng-scope">
+            CANCEL
+        </span>
+    </button>
+</md-dialog-actions>

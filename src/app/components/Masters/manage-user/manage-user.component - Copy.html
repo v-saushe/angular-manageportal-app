@@ -1,0 +1,152 @@
+<div class="container">
+    <div class="card card-container">
+<!-- Page wrapper  -->
+<div class="page-wrapper">
+    <!-- Bread crumb -->
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-primary">Operator</h3>
+        </div>
+        <div class="col-md-7 align-self-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item active">Manage Operator</li>
+            </ol>
+        </div>
+    </div>
+    <!-- End Bread crumb -->
+    <!-- Container fluid  -->
+    <div class="container-fluid">
+        <!-- Start Page Content -->
+        <div class="row">
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Operator Information</div>
+                                <div class="panel-body">
+                                    <div class="form-row">
+
+                                        <div class="form-group col-md-6">
+                                            <label for="inputServiceType">Service Type</label>
+                                            <select id="inputServiceType" class="form-control" (change)="BindDataGridOnServiceTypeChange($event)">
+                                                <option>Choose...</option>
+                                                <option *ngFor="let ServiceTypeObject of ServiceTypeArray" [selected]="ServiceTypeObject.ServiceTypeName == 'Prepaid-Mobile'"
+                                                    value="{{ServiceTypeObject.Id}}">{{ServiceTypeObject.ServiceTypeName}}</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-6 align-self-center" style="padding-top:15px;padding-left:50px;margin-bottom:0px !important;">
+                                            <!-- <button type="submit" class="btn btn-primary">Search</button> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Page Content -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive ">
+                            <div id="idNoRecordFoundOperator" class="dataTables_wrapper" style="color:red;" *ngIf="!pager.pages">
+                                No record found!!!
+                            </div>
+                            <div id="example23_wrapper" class="dataTables_wrapper" *ngIf="pager.pages && pager.pages.length">
+                                <table id="example23" class="display nowrap table table-hover table-striped table-bordered"
+                                    cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%;" (click)="sortOperatorGrid('OperatorName')">Operator
+                                                Name
+                                                <i class="fa" [ngClass]="{'fa-sort': column != 'OperatorName', 'fa-sort-asc': (column == 'OperatorName' && isDesc), 'fa-sort-desc': (column == 'OperatorName' && !isDesc) }"
+                                                    aria-hidden="true">
+                                                </i>
+                                            </th>
+                                            <th style="width: 20%;" (click)="sortOperatorGrid('OperatorCode')">Operator
+                                                Code
+                                                <i class="fa" [ngClass]="{'fa-sort': column != 'OperatorCode', 'fa-sort-asc': (column == 'OperatorCode' && isDesc), 'fa-sort-desc': (column == 'OperatorCode' && !isDesc) }"
+                                                    aria-hidden="true">
+                                                </i>
+                                            </th>
+                                            <th style="width: 10%;" (click)="sortOperatorGrid('IsActive')">Is Active
+                                                <i class="fa" [ngClass]="{'fa-sort': column != 'IsActive', 'fa-sort-asc': (column == 'IsActive' && isDesc), 'fa-sort-desc': (column == 'IsActive' && !isDesc) }"
+                                                    aria-hidden="true"></i>
+                                            </th>
+                                            <th style="width: 15%;" class="text-left">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let OperatorData of pagedOperatorItems | orderBy: {property: column, direction: direction}">
+                                            <!-- <td id="{{serviceTypdaData.Id}}"></td> -->
+                                            <td>{{OperatorData.OperatorName}}</td>
+                                            <td>{{OperatorData.OperatorCode}}</td>
+                                            <td class="text-center">
+                                                <a href="javascript:void(0);">
+                                                    <span class="glyphicon glyphicon-ok" [style.color]="OperatorData.IsActive? 'green' : 'red'"></span>
+                                                </a>
+                                            </td>
+
+                                            <td class="text-center">
+                                                <div data-role="display">
+
+                                                    <button role="edit" class="gj-button-md" key="1">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                        EDIT</button>
+                                                    |
+                                                    <button role="delete" class="gj-button-md" key="1">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                        DELETE</button><button role="update" class="gj-button-md" key="1"
+                                                        style="display: none;"><i class="gj-icon check-circle"></i>
+                                                        UPDATE</button><button role="cancel" class="gj-button-md" key="1"
+                                                        style="display: none;"><i class="gj-icon cancel"></i> CANCEL</button></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="dataTables_info" id="example23_info" role="status" aria-live="polite">
+                                    Showing {{startPoint}} to {{endPoint}} of {{totalDataCount}} entries
+                                </div>
+                                <div class="dataTables_paginate paging_simple_numbers" id="example23_paginate">
+                                    <a class="paginate_button previous" [ngClass]="{disabled:pager.currentPage === 1}"
+                                        aria-controls="example23" data-dt-idx="0" tabindex="0" id="example23_first"
+                                        (click)="setOperatorPage(1)">First </a>
+
+                                    <a class="paginate_button previous" [ngClass]="{disabled:pager.currentPage === 1}"
+                                        (click)="setOperatorPage(pager.currentPage - 1)" aria-controls="example23"
+                                        data-dt-idx="0" tabindex="0" id="example23_previous">Previous
+                                    </a>
+                                    <span>
+                                        <a class="paginate_button" *ngFor="let page of pager.pages" [ngClass]="{current:pager.currentPage === page}"
+                                            aria-controls="example23" data-dt-idx="1" (click)="setOperatorPage(page)"
+                                            tabindex="0">{{page}}
+                                        </a>
+                                    </span>
+                                    <a class="paginate_button next" [ngClass]="{disabled:pager.currentPage === pager.totalPages}"
+                                        (click)="setOperatorPage(pager.currentPage + 1)" aria-controls="example23"
+                                        data-dt-idx="7" tabindex="0" id="example23_next">Next </a>
+
+                                    <a class="paginate_button next" [ngClass]="{disabled:pager.currentPage === pager.totalPages}"
+                                        aria-controls="example23" data-dt-idx="7" tabindex="0" (click)="setOperatorPage(pager.totalPages)"
+                                        id="example23_next">Last </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End PAge Content -->
+
+    </div>
+</div>
+
+</div>
+</div>

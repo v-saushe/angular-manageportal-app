@@ -1,0 +1,49 @@
+.page-titles {
+  background: #ffffff;
+  margin: 0 0 30px;
+  padding: 15px 10px;
+  position: relative;
+  z-index: 10;
+  -webkit-box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+}
+.page-titles h3 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.page-titles .breadcrumb {
+  padding: 0;
+  background: transparent;
+  font-size: 14px;
+}
+.page-titles .breadcrumb li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.page-titles .breadcrumb .breadcrumb-item + .breadcrumb-item:before {
+  content: "\e649";
+  font-family: themify;
+  color: #a6b7bf;
+  font-size: 11px;
+}
+.page-titles .breadcrumb .breadcrumb-item.active {
+  color: #99abb4;
+}
+
+.container-fluid {
+  padding: 0 30px 25px;
+}
+
+@media (min-width: 1024px) {
+  .page-wrapper {
+    margin-left: 240px;
+  }
+}
+.page-wrapper {
+  background: #fafafa;
+  padding-bottom: 60px;
+}
+
+.mat-dialog-container {
+  margin-left: 30%;
+}

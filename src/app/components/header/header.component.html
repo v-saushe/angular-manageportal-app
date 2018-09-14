@@ -1,0 +1,176 @@
+<div id="navbar-wrapper">
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark lighten-5 mb-4 navbar-fixed-top">
+            <!-- Navbar brand -->
+            <div class="navbar-header">
+                <a class="navbar-brand" routerLinkActive="active" routerLink="home">My Portal</a>
+            </div>
+            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Links -->
+
+                <!-- Search form -->
+                <div class="my-lg-0" style="margin-top:10px;width: 50%;float: left;">
+                    <div class="input-group" style="width:70%;">
+                        <input class="form-control py-2 border-right-0 border" type="search" placeholder="Search" value=""
+                            id="example-search-input">
+                        <span class="input-group-append">
+                            <div class="input-group-text"><i class="fa fa-search"></i></div>
+                        </span>
+                    </div>
+                </div>
+                <!-- <div style="clear:both;"></div> -->
+
+                <div style="width:50%;float:right;">
+                    <div style="float:right;">
+                        <ul class="navbar-nav mr-auto" style="float: left; width:100%">
+                            <li class="nav-item">
+                                <a class="nav-link waves-effect waves-light" routerLinkActive="active" routerLink="home">
+                                    <i class="fa fa-home"></i>
+                                    Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item" *ngIf="showMenu">
+                                <div>
+                                    <a class="nav-link" routerLinkActive="active" routerLink="messages">
+                                        <i class="fa fa-envelope-o">
+                                        </i>
+                                        Messages <span class="badge badge-danger"> (11)</span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item" *ngIf="showMenu">
+                                <div>
+                                    <a class="nav-link waves-effect waves-light" routerLinkActive="active" routerLink="notifications">
+                                        <i class="fa fa-bell" aria-hidden="true"></i>
+                                        Notifications <span class="badge badge-warning"> (11)</span>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!-- <li class="nav-item">
+                                    <a class="nav-link waves-effect waves-light" routerLinkActive="active" routerLink="users">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        User
+                                    </a>
+                                </li> -->
+
+                            <!-- Dropdown -->
+                            <li class="nav-item dropdown" *ngIf="!showMenu">
+                                <a class="nav-link dropdown-toggle waves-effect waves-light" id="navbarDropdownMenuLink"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                    Sign In
+                                </a>
+                                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item waves-effect waves-light" routerLinkActive="active"
+                                        routerLink="login">
+                                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                        Login</a>
+                                    <a class="dropdown-item waves-effect waves-light" routerLinkActive="active"
+                                        routerLink="registration">Registration</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item" *ngIf="showMenu">
+                                <div class="fxs-dropmenu " role="presentation" id="navbarusermenuLink" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <button class="fxs-dropmenu-button fxs-menu-account fxs-popup-button">
+                                        <div class="fxs-avatarmenu-header" data-bind="attr: { title: tooltip }, css: { 'fxs-avatarmenu-open': isMenuOpen }"
+                                            title="Name: Saurabh Shekhar
+                                                Email: shekharsa@HCL.COM
+                                                Directory: HCL Technologies Ltd. (189de737-c93a-4f5a-8b68-6f4ca9941912)
+                                                Domain: HCL.IN">
+                                            <div class="fxs-avatarmenu-tenant-container" style="color:white;">
+                                                <div class="fxs-avatarmenu-username" data-bind="text: displayName">shekharsa@HCL.COM</div>
+                                                <div class="fxs-avatarmenu-tenant" data-bind="text: currentTenantDisplayName">HCL
+                                                    Technologies Ltd.</div>
+                                            </div>
+                                            <div class="fxs-avatarmenu-tenant-image-container">
+                                                <img class="fxs-avatarmenu-tenant-image" data-bind="attr: { src: avatarUri }"
+                                                    alt="" src="https://portal.azure.com/Content/static/MsPortalImpl/AvatarMenu/AvatarMenu_defaultAvatarSmall.png">
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarusermenuLink">
+                                        <a class="dropdown-item waves-effect waves-light" (click)="logOut();">
+                                            <i class="fa fa-power-off" aria-hidden="true"></i>
+                                            Sign Out</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- <li class="nav-item m-1">
+                                        <a class="btn btn-secondary" routerLinkActive="active" routerLink="login">
+                                            Login</a>
+                                    </li> -->
+                            <!-- <li class="nav-item">
+                                        <a class="nav-link waves-effect waves-light" routerLinkActive="active" routerLink="notifications">
+                                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                            Sign In
+                                        </a>
+                                    </li> -->
+                            <!-- <li class="nav-item m-1">
+                                        <a class="btn btn-secondary" routerLinkActive="active" routerLink="registration">
+                                            Registration</a>
+                                    </li> -->
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Links -->
+            </div>
+            <!-- Collapsible content -->
+        </nav>
+    </div>
+</div>
+<div id="wrapper" style="padding-bottom:50px;">
+    <div id="sidebar-wrapper" *ngIf="showMenu">
+        <aside id="sidebar">
+            <ul id="sidemenu" class="sidebar-nav">
+                <li>
+                    <a href="#">
+                        <span class="sidebar-icon"><i class="fa fa-dashboard"></i></span>
+                        <span class="sidebar-title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                        <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+                        <span class="sidebar-title">Management</span> <span class="arrow"></span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
+                        <li><a routerLinkActive="active" routerLink="manageusers"><i class="fa fa-caret-right"></i>Users</a></li>
+                        <li><a href="#"><i class="fa fa-caret-right"></i>Roles</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
+                        <span class="sidebar-icon"><i class="fa fa-newspaper-o"></i></span>
+                        <span class="sidebar-title">Blog</span><span class="arrow"></span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul id="submenu-3" class="panel-collapse collapse panel-switch" role="menu">
+                        <li><a href="#"><i class="fa fa-caret-right"></i>Posts</a></li>
+                        <li><a href="#"><i class="fa fa-caret-right"></i>Comments</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="sidebar-icon"><i class="fa fa-database"></i></span>
+                        <span class="sidebar-title">Data</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="sidebar-icon"><i class="fa fa-terminal"></i></span>
+                        <span class="sidebar-title">Console</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+    </div>

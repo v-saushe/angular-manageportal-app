@@ -1,0 +1,351 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+body {
+  /* background: lightgray; */
+}
+
+.navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+}
+
+.navbar-fixed-bottom,
+.navbar-fixed-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar-default .navbar-nav #user-profile {
+  height: 50px;
+  padding-top: 15px;
+  padding-left: 58px;
+}
+
+.navbar-default .navbar-nav #user-profile img {
+  height: 45px;
+  width: 45px;
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  padding: 1px;
+}
+
+#wrapper {
+  /* padding-top: 50px; */
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar-wrapper ul :not(collapsed) .arrow:before,
+#sidebar-wrapper li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+
+@media (min-width: 992px) {
+  #wrapper {
+    padding-left: 225px;
+  }
+}
+
+@media (min-width: 992px) {
+  #wrapper #sidebar-wrapper {
+    width: 228px;
+  }
+}
+
+#sidebar-wrapper {
+  border-right: 1px solid #e7e7e7;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 225px;
+  width: 0;
+  height: 100%;
+  margin-top: 57px;
+  margin-left: -225px;
+  overflow-y: auto;
+  background: #343a40;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar-wrapper .sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 225px;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#sidebar-wrapper .sidebar-nav li {
+  text-indent: 0;
+  line-height: 45px;
+  border-bottom: 1px solid #fff;
+}
+
+#sidebar-wrapper .sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #343a40;
+}
+
+.sidebar-nav li:first-child a {
+  background: #343a40 !important;
+  color: #fff !important;
+}
+
+#sidebar-wrapper .sidebar-nav li a .sidebar-icon {
+  width: 45px;
+  height: 45px;
+  font-size: 14px;
+  padding: 0 2px;
+  display: inline-block;
+  text-indent: 7px;
+  margin-right: 10px;
+  color: #fff;
+  float: left;
+}
+
+#sidebar-wrapper .sidebar-nav li a .caret {
+  position: absolute;
+  right: 23px;
+  top: auto;
+  margin-top: 20px;
+}
+
+#sidebar-wrapper .sidebar-nav li ul.panel-collapse {
+  list-style: none;
+  -moz-padding-start: 0;
+  -webkit-padding-start: 0;
+  -khtml-padding-start: 0;
+  -o-padding-start: 0;
+  padding-start: 0;
+  padding: 0;
+}
+
+#sidebar-wrapper .sidebar-nav li ul.panel-collapse li i {
+  margin-right: 10px;
+}
+
+#sidebar-wrapper .sidebar-nav li ul.panel-collapse li {
+  text-indent: 15px;
+}
+
+@media (max-width: 992px) {
+  #wrapper #sidebar-wrapper {
+    width: 45px;
+  }
+  #wrapper #sidebar-wrapper #sidebar #sidemenu li ul {
+    position: fixed;
+    left: 45px;
+    margin-top: -45px;
+    z-index: 1000;
+    width: 200px;
+    height: 0;
+  }
+}
+
+.sidebar-nav li:first-child a {
+  background: #343a40 !important;
+  color: #fff !important;
+}
+
+.sidebar-nav li:nth-child(2) a {
+  background: #343a40 !important;
+  color: #fff !important;
+}
+
+.sidebar-nav li:nth-child(3) a {
+  background: #343a40 !important;
+  color: #fff !important;
+}
+
+.sidebar-nav li:nth-child(4) a {
+  background: #343a40 !important;
+  color: #fff !important;
+}
+
+.sidebar-nav li:nth-child(5) a {
+  background: #343a40 !important;
+  color: #fff !important;
+}
+
+/* CSS  */
+.fxs-dropmenu {
+  position: relative;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  z-index: 200;
+}
+
+.fxs-topbar-avatarmenu .fxs-dropmenu-button,
+.fxs-topbar-button {
+  fill: #fff;
+}
+.fxs-dropmenu-button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: 0 0;
+  cursor: pointer;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  height: 100%;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.fxs-avatarmenu-header {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 40px;
+}
+
+.fxs-topbar-avatarmenu .fxs-dropmenu-button,
+.fxs-topbar-button {
+  fill: #fff;
+}
+.fxs-dropmenu-button {
+  cursor: pointer;
+}
+
+.fxs-avatarmenu-tenant-container {
+  text-align: right;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding-left: 20px;
+}
+
+.fxs-avatarmenu-username {
+  font-size: 14px;
+}
+.fxs-avatarmenu-tenant,
+.fxs-avatarmenu-username {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: normal;
+  max-width: 146px;
+}
+
+.fxs-avatarmenu-tenant {
+  font-family: az_ea_font, "Segoe UI", wf_segoe-ui_semibold, "Segoe UI Semibold",
+    "Segoe WP Semibold", "Segoe WP", Tahoma, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.fxs-avatarmenu-tenant,
+.fxs-avatarmenu-username {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: normal;
+  max-width: 146px;
+}
+
+.fxs-avatarmenu-tenant-image-container {
+  height: 35px;
+  width: 35px;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 11px;
+  padding-right: 5px;
+  box-sizing: content-box;
+}
+
+.fxs-avatarmenu-tenant-image {
+  height: 35px;
+  width: 35px;
+  border: 0;
+  border-radius: 35px;
+}
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.fxs-dropmenu-content .fxs-dropmenu-list-content {
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fxs-mode-light .fxs-portal-text {
+  color: #000;
+}
+
+.fxs-dropmenu-content .fxs-dropmenu-image {
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 16px;
+  width: 16px;
+}
+.fxs-fill-error,
+.msportalfx-fill-error {
+  fill: #e81123 !important;
+}
+
+.fxs-dropmenu-content .fxs-dropmenu-image img,
+.fxs-dropmenu-content .fxs-dropmenu-image svg {
+  height: 13px;
+  width: 13px;
+}
+img,
+svg {
+  overflow: hidden;
+}
+
+.fxs-dropmenu-content li a {
+  -webkit-align-items: center;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 20px;
+}
+.fxs-avatarmenu-dropdown-item,
+.fxs-avatarmenu-topbar-action {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.fxs-dropmenu-content .fxs-dropmenu-line-separator {
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+.fxs-mode-light .fxs-portal-border {
+  border-color: rgba(204, 204, 204, 0.8);
+}
+.fxs-dropmenu-content ol,
+.fxs-dropmenu-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
